@@ -8,6 +8,7 @@ export interface Employee {
   nationalId: string; // ⚠️ NHẠY CẢM: Hiện trên UI nhưng KHÔNG đưa vào AppContext
   salary: number;     // ⚠️ NHẠY CẢM: Hiện trên UI nhưng KHÔNG đưa vào AppContext
   joinDate: string;
+  status?: "active" | "on_leave";
 }
 
 export const INITIAL_EMPLOYEES: Employee[] = [
@@ -27,8 +28,10 @@ export interface LeaveRequest {
   id: string;
   employeeId: string;
   employeeName: string;
+  type?: "annual" | "sick" | "unpaid";
   startDate: string;
   endDate: string;
+  days?: number;
   reason: string;
   status: "pending" | "approved" | "rejected";
   createdAt: string;

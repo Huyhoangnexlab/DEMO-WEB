@@ -6,7 +6,7 @@ import { registerHrMcpServer } from "../../../../lib/mcp/server";
 
 const handler = createMcpHandler(
   (server) => {
-    registerHrMcpServer(server);
+    registerHrMcpServer(server as any);
   },
   {
     serverInfo: { name: "nexlab-hr-demo", version: "1.0.0" },
